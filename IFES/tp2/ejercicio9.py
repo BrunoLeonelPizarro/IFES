@@ -5,6 +5,8 @@ def Segundos_A_Minutos(a):
     minutos = (a // 60) % 60
     return minutos
 
+
+
 def minutos_A_Horas (a):
     horas = (a // 60) // 60
     return horas
