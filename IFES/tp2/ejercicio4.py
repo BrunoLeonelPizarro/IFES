@@ -7,9 +7,10 @@ def calcPerimetro (a,b):
     return perimetro
 
 
+
 def calcArea (a,b):
-    area = a*b
-    return area
+    areaa = a*b
+    return areaa
 
 
 valor_Base = int(input("Ingresar el valor de la base: "))
