@@ -6,6 +6,7 @@ def calcPerimetro (a,b):
     perimetro = 2*a + 2*b
     return perimetro
 
+
 def calcArea (a,b):
     area = a*b
     return area
