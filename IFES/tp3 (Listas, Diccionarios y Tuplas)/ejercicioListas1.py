@@ -2,8 +2,12 @@ lista1 = ["Luis","Veronica","Sergio","Leandro","Franco"]
 lista2 = ["Pereira","Martinez","Silva","Fernandez","Sepulveda"]
 lista3 = ["21","45","28","22","25"]
 
-lista2.reverse()
-print(lista2);input()
+def reversoLista (a):
+    revLista = a.reverse()
+    return revLista
+
+
+print(reversoLista(lista2))
 
 lista1.append("Bruno")
 lista1.append("Nehuen")
