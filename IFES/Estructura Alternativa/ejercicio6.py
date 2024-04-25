@@ -22,5 +22,5 @@ else:
     elif cod_Categoria == "C":
         categoria_Empleado = diccionario_Categorias["C"]
         sueldo_Empleado = diccionario_Sueldo["C"]
-        
+#------------------------------------------------------------------------------------------------------------------------------------------------------------------#        
     print("El empleado", nombre, apellido, "de categoria", cod_Categoria, "tabaja en el puesto de", categoria_Empleado, "y tiene un salario de", sueldo_Empleado)
