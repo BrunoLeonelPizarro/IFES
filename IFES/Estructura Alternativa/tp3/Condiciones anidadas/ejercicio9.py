@@ -1,6 +1,9 @@
 import os
 os.system("cls")
 
+lista_horarios = ("15:00", "17:00", "19:00","21:00")
+diccionario_Peliculas_Horarios = {"Menores de 13": "Los increibles 3", "Menores de 16":"Buscando a nemo", "Menores de 25":"Rapido y Furiosos 7", "Otros": "La Verdad Oculta"}
+
 def definir_Pelicula (a):
     if a <= 13:
         pelicula_Definida = diccionario_Peliculas_Horarios ["Menores de 13"]
@@ -23,8 +26,6 @@ def definir_Horrario (a):
         horario_definido = lista_horarios [3]
     return horario_definido
 
-lista_horarios = ("15:00", "17:00", "19:00","21:00")
-diccionario_Peliculas_Horarios = {"Menores de 13": "Los increibles 3", "Menores de 16":"Buscando a nemo", "Menores de 25":"Rapido y Furiosos 7", "Otros": "La Verdad Oculta"}
 
 edad = int(input("Ingrese la edad: "))
 
