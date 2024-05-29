@@ -27,10 +27,11 @@ for i in range (cantidad_Inscriptos):
     id_inscriptos.append(id_inscripto)
     print ("Id N°: ", id_inscriptos [i] )
     apellidos.append(input("Ingrese su apellido: ").capitalize())
-    nombres.append(input("Ingrese su nombre: ").upper())
-    edad = int(input("Ingrese su edad: "))
+    nombres.append(input("\nIngrese su nombre: ").upper())
+    edad = int(input("\nIngrese su edad: "))
     while edad < 12 or edad > 50:
-        edad = int(input("ERROR | Ingrese una edad entre 12 y 50 años: "))
+        os.system("cls")
+        edad = int(input("ERROR EDAD | Ingrese una edad entre 12 y 50 años: "))
         os.system("cls")
     edades.append(edad)
     if edad <= 15:
@@ -56,7 +57,8 @@ for i in range (cantidad_Inscriptos):
 
     codigo_deporte = input("Ingrese un codigo de deporte (F: (FUTBOL) | V: (VOLEY) | H: (HANDBALL)): ")
     while codigo_deporte != "F" and codigo_deporte != "V" and codigo_deporte != "H" and codigo_deporte != "f" and codigo_deporte != "v" and codigo_deporte != "h":
-        codigo_deporte = input("Ingrese un codigo de deporte valido (F: (FUTBOL) | V: (VOLEY) | H: (HANDBALL)) : ")
+        os.system("cls")
+        codigo_deporte = input("ERROR CODIGO DEPORTE | Ingrese un codigo de deporte valido (F: (FUTBOL) | V: (VOLEY) | H: (HANDBALL)) : ")
         os.system("cls")
     cod_deportes.append(codigo_deporte)
     
@@ -69,9 +71,11 @@ for i in range (cantidad_Inscriptos):
     
     codigo_localidad = input("iNGRESE UN CODIGO DE LOCALIDAD (C: CIPOLETTI | N: NEUQUEN | P: PLOTTIER): ")
     while codigo_localidad != "C" and codigo_localidad != "N" and codigo_localidad != "P" and codigo_localidad != "c" and codigo_localidad != "n" and codigo_localidad != "p":
+        os.system("cls")
         codigo_localidad = input("Ingrese un codigo de lOCALIDAD valido (C: CIPOLETTI | N: NEUQUEN | P: PLOTTIER): ")
         os.system("cls")
     cod_localidad.append(codigo_localidad)
+    
     if codigo_localidad == "C" or codigo_localidad == "c":
         localidades.append("Cipolletti")
     elif codigo_localidad == "N" or codigo_localidad == "n":
@@ -80,14 +84,16 @@ for i in range (cantidad_Inscriptos):
         localidades.append("Plottier")
     
     valor_cuota = int(input("Ingrese el valor de la cuota: "))
-    while valor_cuota < 0:
+    while valor_cuota <= 0:
+        os.system("cls")
         valor_cuota = int(input("ERROR VALOR CUOTA | Ingrese un valor mayor a 0: "))
+        os.system("cls")
     cuotas.append(valor_cuota)
     os.system("cls")
 
 print("**MUESTREO DE INSCRIPTOS**")
 for i in range (cantidad_Inscriptos):
     print("ID INSCRIPTO: ", id_inscriptos [i], "| Nombre: ", nombres[i],"| Apellido: ", apellidos[i],"| Edad: ",edades[i])
-    print("\nDATOS COLOCADOS | CODIGO DEPORTE: ", cod_deportes[i]," : ", deportes[i], "DIAS Y HORARIO: ",dias[i], horarrios_Practicas[i], " | CODIGO LOCALIDAD: ", (cod_localidad[i]), " : ", localidades[i])
+    print("\nDATOS COLOCADOS | CODIGO DEPORTE: ", cod_deportes[i]," : ", deportes[i], "DIAS Y HORARIO: ",dias[i], horarrios_Practicas[i], " | CODIGO LOCALIDAD: ", cod_localidad[i], " : ", localidades[i])
     print("\nCUOTA A PAGAR: ", cuotas[i])
     print("===========================================================================================")
