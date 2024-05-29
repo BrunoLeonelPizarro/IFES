@@ -60,7 +60,7 @@ for i in range (cantidad_Inscriptos):
         os.system("cls")
         codigo_deporte = input("ERROR CODIGO DEPORTE | Ingrese un codigo de deporte valido (F: (FUTBOL) | V: (VOLEY) | H: (HANDBALL)) : ")
         os.system("cls")
-    cod_deportes.append(codigo_deporte)
+    cod_deportes.append(codigo_deporte.upper())
     
     if codigo_deporte == "F" or codigo_deporte == "f":
         deportes.append("Futbol")
@@ -74,7 +74,7 @@ for i in range (cantidad_Inscriptos):
         os.system("cls")
         codigo_localidad = input("Ingrese un codigo de lOCALIDAD valido (C: CIPOLETTI | N: NEUQUEN | P: PLOTTIER): ")
         os.system("cls")
-    cod_localidad.append(codigo_localidad)
+    cod_localidad.append(codigo_localidad.upper())
     
     if codigo_localidad == "C" or codigo_localidad == "c":
         localidades.append("Cipolletti")
