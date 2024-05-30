@@ -147,7 +147,6 @@ for i in range (cantidad_Inscriptos):
     elif categorias [i] == "Veteranos":
         acum_Cuotas_Categoria_Veteranos + acum_Cuotas_Categoria_Veteranos + cuotas[i]
         
-        
     if deportes [i] == "Futbol":
         acum_Cuotas_Deporte_Futbol = acum_Cuotas_Deporte_Futbol + cuotas [i]
         if cantidad_deporte_Futbol <= 0:
@@ -189,7 +188,7 @@ for i in range (cantidad_Inscriptos):
 
 print("\n**MUESTREO FINAL**")
 print("CANTIDAD DE ALUMNOS POR CATEGORIA | Infantiles: ",cantidad_categoria_Infantiles, "| Juveniles: ", cantidad_categoria_Juveniles, "| Adultos: ",cantidad_categoria_Adultos, "| Mayores: ", cantidad_categoria_Mayores, "| Veteranos: ", cantidad_categoria_Veteranos)
-print ("CANTIDAD DE ALUMNOS POR DEPORTE: | Futbol: ",cantidad_deporte_Futbol, " | Voley: ",cantidad_deporte_Voley," | Handball: ", cantidad_deporte_Handball)
+print ("CANTIDAD DE ALUMNOS POR DEPORTE: | Futbol: ",cantidad_deporte_Futbol," | Voley: ",cantidad_deporte_Voley," | Handball: ", cantidad_deporte_Handball)
 print("CANTIDAD DE ALUMNOS POR LOCALIDAD: | Cipolletti: ", cantidad_localidad_de_Cipolletti," | Neuquen: ", cantidad_localidad_de_Neuquen," | Plottier: ",cantidad_localidad_de_Plottier)
 print("CANTIDAD DE ALUMNOS QUE HACEN FUTBOL Y PERTENECEN A LA CATEGORIA DE VETERANOS: ",cantidad_futbol_veteranos)
 print ("PROMEDIO DE CUOTAS POR DEPORTE: | Futbol: ",promedio_Cuotas_deporte_Futbol," | Voley: ",promedio_Cuotas_deporte_Voley," | Handball: ",promedio_Cuotas_deporte_Handball)
