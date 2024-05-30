@@ -13,6 +13,7 @@ cantidad_localidad_de_Cipolletti = 0
 cantidad_localidad_de_Neuquen = 0
 cantidad_localidad_de_Plottier = 0
 cantidad_futbol_veteranos = 0
+cantidad_cuotas = 0
 
 acum_Cuotas_Categoria_Infantiles = 0
 acum_Cuotas_Categoria_Juveniles = 0
@@ -22,6 +23,7 @@ acum_Cuotas_Categoria_Veteranos = 0
 acum_Cuotas_Deporte_Futbol = 0
 acum_Cuotas_Deporte_Voley = 0
 acum_Cuotas_Deporte_Handball = 0
+acum_Promedio_Cuotas = 0
 
 promedio_cuotas_Infantiles = 0
 promedio_cuotas_Juveniles = 0
@@ -31,7 +33,7 @@ promedio_cuotas_Veteranos = 0
 promedio_Cuotas_deporte_Futbol = 0
 promedio_Cuotas_deporte_Voley = 0
 promedio_Cuotas_deporte_Handball = 0
-promedio_cuotas = 0
+promedio_cuotas_Total = 0
 
 apellidos = []
 nombres = []
@@ -59,8 +61,8 @@ for i in range (cantidad_Inscriptos):
     id_inscriptos.append(id_inscripto)
     print ("Id N°: ", id_inscriptos [i] )
     apellidos.append(input("Ingrese su apellido: ").capitalize())
-    nombres.append(input("\nIngrese su nombre: ").upper())
-    edades.append(int(input("\nIngrese su edad: ")))
+    nombres.append(input("Ingrese su nombre: ").upper())
+    edades.append(int(input("Ingrese su edad: ")))
     while edades[i] < 12 or edades[i] > 50:
         os.system("cls")
         edades.append(int(input("ERROR EDAD | Ingrese una edad entre 12 y 50 años: ")))
@@ -84,7 +86,7 @@ for i in range (cantidad_Inscriptos):
         dias.append("Sabado")
         horarrios_Practicas.append("14:00")
         categorias.append("Mayores")
-        cantidad_categoria_Mayores + 1
+        cantidad_categoria_Mayores = cantidad_categoria_Mayores + 1
     else:
         dias.append("Sabado")
         horarrios_Practicas.append("16:00")
@@ -128,48 +130,52 @@ for i in range (cantidad_Inscriptos):
         os.system("cls")
         valor_cuota = int(input("ERROR VALOR CUOTA | Ingrese un valor mayor a 0: "))
         os.system("cls")
+    cantidad_cuotas = cantidad_cuotas + 1
         
     if categorias [i] == "Infantil":
         acum_Cuotas_Categoria_Infantiles = acum_Cuotas_Categoria_Infantiles + cuotas[i]
-        if cantidad_categoria_Infantiles > 0:
-            promedio_cuotas_Infantiles = acum_Cuotas_Categoria_Infantiles / cantidad_categoria_Infantiles
-        else:
-            promedio_cuotas_Infantiles = 0
+        
     elif categorias[i] == "Juveniles":
         acum_Cuotas_Categoria_Juveniles = acum_Cuotas_Categoria_Juveniles + cuotas[i]
-        if cantidad_categoria_Juveniles > 0:
-            promedio_cuotas_Juveniles = acum_Cuotas_Categoria_Juveniles / cantidad_categoria_Juveniles
-        else:
-            promedio_cuotas_Juveniles = 0
+        
     elif categorias[i]== "Adultos":
         acum_Cuotas_Categoria_Adultos = acum_Cuotas_Categoria_Adultos + cuotas[i]
-        if cantidad_categoria_Adultos > 0:
-            promedio_cuotas_Adultos = acum_Cuotas_Categoria_Adultos / cantidad_categoria_Adultos
-        else:
-            promedio_cuotas_Adultos = 0
-    elif categorias == "Mayores":
+        
+    elif categorias [i] == "Mayores":
         acum_Cuotas_Categoria_Mayores = acum_Cuotas_Categoria_Mayores + cuotas[i]
-        if cantidad_categoria_Mayores > 0:
-            promedio_cuotas_Mayores = acum_Cuotas_Categoria_Mayores / cantidad_categoria_Mayores
-        else:
-            promedio_cuotas_Mayores = 0
-    elif cantidad_categoria_Veteranos == "Veteranos":
+        
+    elif categorias [i] == "Veteranos":
         acum_Cuotas_Categoria_Veteranos + acum_Cuotas_Categoria_Veteranos + cuotas[i]
-        if cantidad_categoria_Veteranos > 0:
-            promedio_cuotas_Veteranos = acum_Cuotas_Categoria_Veteranos / cantidad_categoria_Veteranos
-        else:
-            promedio_cuotas_Veteranos = 0
-    
-    if cod_deportes[i] == "F" or cod_deportes[i] == "f":
+        
+        
+    if deportes [i] == "Futbol":
         acum_Cuotas_Deporte_Futbol = acum_Cuotas_Deporte_Futbol + cuotas [i]
+        if cantidad_deporte_Futbol <= 0:
+            promedio_Cuotas_deporte_Futbol = 0
+        else:
+            promedio_Cuotas_deporte_Futbol = acum_Cuotas_Deporte_Futbol / cantidad_deporte_Futbol
         
-    elif cod_deportes[i] == "V" or cod_deportes[i] == "v":
+    elif deportes [i] == "Voley":
         acum_Cuotas_Deporte_Voley = acum_Cuotas_Deporte_Voley + cuotas [i]
+        if cantidad_deporte_Voley <= 0:
+            promedio_Cuotas_deporte_Voley = 0
+        else:
+            promedio_Cuotas_deporte_Voley = acum_Cuotas_Deporte_Voley / cantidad_deporte_Voley
         
-    elif cod_deportes[i] == "H" or cod_deportes[i] == "h":
+    elif deportes [i] == "Handball":
         acum_Cuotas_Deporte_Handball = acum_Cuotas_Deporte_Handball + cuotas[i]
-        
-        
+        if cantidad_deporte_Handball <= 0:
+            promedio_Cuotas_deporte_Handball = 0
+        else:
+            promedio_Cuotas_deporte_Handball= acum_Cuotas_Deporte_Handball / cantidad_deporte_Handball
+
+    acum_Cuotas = acum_Cuotas_Deporte_Voley + acum_Cuotas_Deporte_Futbol + acum_Cuotas_Deporte_Handball
+    promedio_cuotas_Total = acum_Cuotas / cantidad_cuotas
+    
+    if deportes [i] == "Futbol" and categorias [i] == "Veteranos":
+        cantidad_futbol_veteranos = cantidad_futbol_veteranos + 1
+    else:
+        cantidad_futbol_veteranos = cantidad_futbol_veteranos + 0
     
     os.system("cls")
 
@@ -179,3 +185,12 @@ for i in range (cantidad_Inscriptos):
     print("\nDATOS COLOCADOS | CODIGO DEPORTE: ", cod_deportes[i]," : ", deportes[i], "DIAS Y HORARIO: ",dias[i], horarrios_Practicas[i], " | CODIGO LOCALIDAD: ", cod_localidad[i], " : ", localidades[i])
     print("\nCUOTA A PAGAR: ", cuotas[i])
     print("===========================================================================================")
+    input("Presione enter para continuar")
+
+print("\n**MUESTREO FINAL**")
+print("CANTIDAD DE ALUMNOS POR CATEGORIA | Infantiles: ",cantidad_categoria_Infantiles, "| Juveniles: ", cantidad_categoria_Juveniles, "| Adultos: ",cantidad_categoria_Adultos, "| Mayores: ", cantidad_categoria_Mayores, "| Veteranos: ", cantidad_categoria_Veteranos)
+print ("CANTIDAD DE ALUMNOS POR DEPORTE: | Futbol: ",cantidad_deporte_Futbol, " | Voley: ",cantidad_deporte_Voley," | Handball: ", cantidad_deporte_Handball)
+print("CANTIDAD DE ALUMNOS POR LOCALIDAD: | Cipolletti: ", cantidad_localidad_de_Cipolletti," | Neuquen: ", cantidad_localidad_de_Neuquen," | Plottier: ",cantidad_localidad_de_Plottier)
+print("CANTIDAD DE ALUMNOS QUE HACEN FUTBOL Y PERTENECEN A LA CATEGORIA DE VETERANOS: ",cantidad_futbol_veteranos)
+print ("PROMEDIO DE CUOTAS POR DEPORTE: | Futbol: ",promedio_Cuotas_deporte_Futbol," | Voley: ",promedio_Cuotas_deporte_Voley," | Handball: ",promedio_Cuotas_deporte_Handball)
+print("PROMEDIO DE TODAS LAS CUOTAS: ",promedio_cuotas_Total)
