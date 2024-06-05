@@ -44,5 +44,5 @@ for i in range (tamaño):
         os.system("cls")
     
     codigo.insert(i((input("Ingrese el codigo: "))))
-    while codigo[i]  
+    
     
