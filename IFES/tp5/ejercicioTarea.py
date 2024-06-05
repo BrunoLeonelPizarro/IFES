@@ -1,6 +1,25 @@
 import os
 os.system("cls")
 
+def funcion_contador (a):
+    
+    resultado_Funcion_contador = 0
+    resultado_Funcion_contador = a + 1
+    return resultado_Funcion_contador
+
+def funcion_acumulador (a):
+    resultado_Funcion_acumulador = 0
+    resultado_Funcion_acumulador = resultado_Funcion_acumulador + a[i]
+    return resultado_Funcion_acumulador
+    
+def funcion_promedio (a,b,c):
+    resultado_Funcion_promedio = 0
+    if a == 0:
+        resultado_Funcion_promedio = 0
+    else:
+        resultado_Funcion_promedio  = b / c
+    return resultado_Funcion_promedio
+
 cantidad_categoria_Infantiles = 0
 cantidad_categoria_Juveniles = 0
 cantidad_categoria_Adultos = 0
@@ -58,77 +77,77 @@ id_inscripto = 0
 
 for i in range (cantidad_Inscriptos):
     id_inscripto = id_inscripto + 1
-    id_inscriptos.append(id_inscripto)
+    id_inscriptos.insert(i(id_inscripto))
     print ("Id N°: ", id_inscriptos [i] )
-    apellidos.append(input("Ingrese su apellido: ").capitalize())
-    nombres.append(input("Ingrese su nombre: ").upper())
-    edades.append(int(input("Ingrese su edad: ")))
+    apellidos.insert(i(input("Ingrese su apellido: ").capitalize()))
+    nombres.insert(i(input("Ingrese su nombre: ").upper()))
+    edades.insert(i(int(input("Ingrese su edad: "))))
     while edades[i] < 12 or edades[i] > 50:
         os.system("cls")
-        edades.append(int(input("ERROR EDAD | Ingrese una edad entre 12 y 50 años: ")))
+        edades.insert(i(int(input("ERROR EDAD | Ingrese una edad entre 12 y 50 años: "))))
         os.system("cls")
     if edades[i] <= 15:
         dias.append("Viernes")
         horarrios_Practicas.append("17:00")
         categorias.append("Infantil")
-        cantidad_categoria_Infantiles = cantidad_categoria_Infantiles + 1
+        cantidad_categoria_Infantiles = funcion_contador(cantidad_categoria_Infantiles)
     elif edades[i] <= 18:
         dias.append("Viernes")
         horarrios_Practicas.append("19:00")
         categorias.append("Juveniles")
-        cantidad_categoria_Juveniles = cantidad_categoria_Juveniles + 1
+        cantidad_categoria_Juveniles = funcion_contador(cantidad_categoria_Juveniles)
     elif edades[i] <= 24:
         dias.append("Viernes")
         horarrios_Practicas.append("21:00")
         categorias.append("Adultos")
-        cantidad_categoria_Adultos = cantidad_categoria_Adultos + 1
+        cantidad_categoria_Adultos = funcion_contador(cantidad_categoria_Adultos)
     elif edades[i] <= 40:
         dias.append("Sabado")
         horarrios_Practicas.append("14:00")
         categorias.append("Mayores")
-        cantidad_categoria_Mayores = cantidad_categoria_Mayores + 1
+        cantidad_categoria_Mayores = funcion_contador(cantidad_categoria_Mayores)
     else:
         dias.append("Sabado")
         horarrios_Practicas.append("16:00")
         categorias.append("Veteranos")
-        cantidad_categoria_Veteranos = cantidad_categoria_Veteranos + 1
+        cantidad_categoria_Veteranos = funcion_contador(cantidad_categoria_Veteranos)
 
-    cod_deportes.append(input("Ingrese un codigo de deporte (F: (FUTBOL) | V: (VOLEY) | H: (HANDBALL)): "))
-    while cod_deportes[i] != "F" and cod_deportes[i] != "V" and cod_deportes[i] != "H" and cod_deportes[i] != "f" and cod_deportes[i] != "v" and cod_deportes[i] != "h":
+    cod_deportes.insert(i(input("Ingrese un codigo de deporte (F: (FUTBOL) | V: (VOLEY) | H: (HANDBALL)): ").upper()))
+    while cod_deportes[i] != "f" and cod_deportes[i] != "v" and cod_deportes[i] != "h":
         os.system("cls")
-        cod_deportes.append(input("ERROR CODIGO DEPORTE | Ingrese un codigo de deporte valido (F: (FUTBOL) | V: (VOLEY) | H: (HANDBALL)) : "))
+        cod_deportes.insert(i(input("ERROR CODIGO DEPORTE | Ingrese un codigo de deporte valido (F: (FUTBOL) | V: (VOLEY) | H: (HANDBALL)) : ").upper()))
         os.system("cls")
     
-    if cod_deportes[i] == "F" or cod_deportes[i] == "f":
+    if cod_deportes[i] == "f":
         deportes.append("Futbol")
-        cantidad_deporte_Futbol = cantidad_deporte_Futbol + 1
-    elif cod_deportes[i] == "V" or cod_deportes[i] == "v":
+        cantidad_deporte_Futbol = funcion_contador(cantidad_deporte_Futbol)
+    elif cod_deportes[i] == "v":
         deportes.append("Voley")
-        cantidad_deporte_Voley = cantidad_deporte_Voley + 1
-    elif cod_deportes[i] == "H" or cod_deportes[i] == "h":
+        cantidad_deporte_Voley = funcion_contador(cantidad_deporte_Voley)
+    elif cod_deportes[i] == "h":
         deportes.append("Handball")
-        cantidad_deporte_Handball = cantidad_deporte_Handball + 1
+        cantidad_deporte_Handball = funcion_contador(cantidad_deporte_Handball)
     
-    cod_localidad.append(input("INGRESE UN CODIGO DE LOCALIDAD (C: CIPOLETTI | N: NEUQUEN | P: PLOTTIER): "))
-    while cod_localidad[i] != "C" and cod_localidad[i] != "N" and cod_localidad[i] != "P" and cod_localidad[i] != "c" and cod_localidad[i] != "n" and cod_localidad[i] != "p":
+    cod_localidad.insert(i(input("INGRESE UN CODIGO DE LOCALIDAD (C: CIPOLETTI | N: NEUQUEN | P: PLOTTIER): ")))
+    while cod_localidad[i] != "c" and cod_localidad[i] != "n" and cod_localidad[i] != "p":
         os.system("cls")
-        cod_localidad.append(input("Ingrese un codigo de lOCALIDAD valido (C: CIPOLETTI | N: NEUQUEN | P: PLOTTIER): "))
+        cod_localidad.insert(i(input("Ingrese un codigo de lOCALIDAD valido (C: CIPOLETTI | N: NEUQUEN | P: PLOTTIER): ")))
         os.system("cls")
     
-    if cod_localidad[i] == "C" or cod_localidad[i] == "c":
+    if cod_localidad[i] == "c":
         localidades.append("Cipolletti")
-        cantidad_localidad_de_Cipolletti = cantidad_localidad_de_Cipolletti +1
-    elif cod_localidad[i] == "N" or cod_localidad[i] == "n":
+        cantidad_localidad_de_Cipolletti = funcion_contador()
+    elif cod_localidad[i] == "n":
         localidades.append("Neuquen")
-        cantidad_localidad_de_Neuquen = cantidad_localidad_de_Neuquen + 1
-    elif cod_localidad[i] == "P" or cod_localidad[i] == "p":
+        cantidad_localidad_de_Neuquen = funcion_contador()
+    elif cod_localidad[i] == "p":
         localidades.append("Plottier")
         cantidad_localidad_de_Plottier = cantidad_localidad_de_Plottier + 1
     
-    cuotas.append(int(input("Ingrese el valor de la cuota: ")))
+    cuotas.insert(i(int(input("Ingrese el valor de la cuota: "))))
     while cuotas[i] <= 0:
         os.system("cls")
-        valor_cuota = int(input("ERROR VALOR CUOTA | Ingrese un valor mayor a 0: "))
+        cuotas.insert(i(int(input("ERROR VALOR CUOTA | Ingrese un valor mayor a 0: "))))
         os.system("cls")
     cantidad_cuotas = cantidad_cuotas + 1
         
