@@ -15,6 +15,7 @@ etiqueta1.config(fg= "blue", bg = "white", width = 35, font = ("Arial",12), anch
 
 texto1=Entry(marco)
 texto1.grid(row=0, column= 1,sticky= "w", pady=10,padx=10)
+texto1.config(width=30)
 
 etiqueta2 = Label(marco, text="Ingrese el 2° valor:")
 etiqueta2.grid(row= 1,column=0, sticky= "w", pady=10,padx=10)
@@ -22,6 +23,7 @@ etiqueta2.config(fg= "blue", bg = "white", width = 35, font = ("Arial",12), anch
 
 texto2=Entry(marco)
 texto2.grid(row=1, column= 1, sticky= "w", pady=10,padx=10)
+texto2.config(width=30)
 
 etiqueta3 = Label(marco, text="Ingrese el 3° valor:")
 etiqueta3.grid(row= 2,column=0, sticky= "w", pady=10,padx=10)
@@ -29,5 +31,6 @@ etiqueta3.config(fg= "blue", bg = "white", width = 35, font = ("Arial",12), anch
 
 texto3=Entry(marco)
 texto3.grid(row=2, column= 1, sticky= "w", pady=10,padx=10)
+texto3.config(width=30)
 
 raiz.mainloop()
