@@ -1,13 +1,24 @@
 from tkinter import *
 def calcular():
     suma = valor1.get() + valor2.get() + valor3.get()
+    
+    if flete.get() == 1:
+        suma= suma*1.1
+    if garantia.get() == 1:
+        suma=suma*1.1
     total.set(suma)
+    
     
 def nuevo():
     valor1.set(0)
     valor2.set(0)
     valor3.set(0)
     total.set(0)
+    flete.set(0)
+    garantia.set(0)
+
+def salir():
+    raiz.destroy()
 
 def creacion_Etiqueta(marco_Entrada, texto_A_colocar):
     etiqueta = Label(marco_Entrada, text=texto_A_colocar)
@@ -25,6 +36,9 @@ def creacion_Texto(marco_Entrada, texto_Variable_Entrada):
 
 def grid_Texto(texto_Entrada,row_Entrada,column_Entrada,sticky_Entrada, pady_Entrada, padx_Entrada):
     texto_Entrada.grid(row=row_Entrada, column=column_Entrada, sticky=sticky_Entrada, pady=pady_Entrada, padx=padx_Entrada)
+
+def configuracion_Texto(entrada_Texto, bg_Entrada, fuente_Entrada, tamanio_Fuente, negrita_Entrada, italic_Entrada):
+    entrada_Texto.config(bg=bg_Entrada, font=(fuente_Entrada, tamanio_Fuente, negrita_Entrada, italic_Entrada))
 
 def creacion_boton(marco_Entrada, texto_Boton,asignar_Comando):
     boton = Button(marco_Entrada, text=texto_Boton, command = asignar_Comando)
@@ -83,7 +97,7 @@ boton1 = creacion_boton(marco,"CONFIRMAR",lambda:calcular())
 configuracion_Grid_Boton(boton1,5,0,10,10,None)
 configuracion_De_Boton(boton1,"White",20,"Arial",10,"bold","italic")
 
-boton2 = creacion_boton(marco,"Nueva Suma",None)
+boton2 = creacion_boton(marco,"Nueva Suma",lambda:nuevo())
 configuracion_Grid_Boton(boton2,5,1,10,10,None)
 configuracion_De_Boton(boton2,"white",20,"Arial",10,"bold","italic")
 
@@ -94,7 +108,36 @@ configurar_Etiqueta(etiqueta5,"white",20,"Arial",10,"bold","w")
 texto2 = creacion_Texto (marco,total)
 grid_Texto(texto2,6,1,"w",10,10)
 
+boton3 = creacion_boton(marco,"SALIR",lambda:salir())
+configuracion_Grid_Boton(boton3,7,0,10,10,2)
+configuracion_De_Boton(boton3,"gray",40,"Arial",12,"bold","italic")
+
+etiqueta6 = creacion_Etiqueta(marco,"** SERVICIOS ESPECIALES **")
+grid_Etiqueta(etiqueta6,1,2,"w",10,10)
+configurar_Etiqueta(etiqueta6,"lightgray",None,"Rockwell",12,"bold","w")
+
+flete = IntVar()
+garantia = IntVar()
 
 
+chkflete = Checkbutton(marco,text="Flete", variable= flete, onvalue= 1, offvalue=0)
+chkflete.grid(row=2,column=2,sticky="w",padx=10,pady=10)
+chkflete.config(fg="black",bg="white",width=15,font=("Rockwell",10),anchor="w")
+
+chkgar = Checkbutton(marco,text="Garantia Ectendida", variable= garantia,onvalue=1,offvalue=0)
+chkgar.grid(row=3,column=2,sticky="w",padx=10,pady=10)
+chkgar.config(fg="black",bg="white",width=15,font=("Rockwell",10),anchor="w")
+
+
+cli = IntVar(value=1)
+eot=IntVar()
+
+cate=Radiobutton(marco,text="Cliente",variable=cli,value=1)
+cate.grid(row=2,column=3,sticky="w",padx=10,pady=10)
+cate.config(fg="black",bg="white",width=15,font=("Rockwell",10),anchor="w")
+
+cate2 = Radiobutton(marco,text="No clientes",variable=cli,value=2)
+cate2.grid(row=3,column=3,sticky="w",padx=10,pady=10)
+cate2.config(fg="black",bg="white",width=15,font=("Rockwell",10),anchor="w")
 
 raiz.mainloop()
