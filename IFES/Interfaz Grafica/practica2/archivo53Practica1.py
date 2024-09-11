@@ -63,7 +63,7 @@ total= IntVar()
 
 raiz.iconbitmap('IFES/Interfaz Grafica/Iconos/compu.ico')
 
-marco = Frame(raiz, bg="lightgray", width=650, height=350)
+marco = Frame(raiz)
 marco.pack(fill="none", expand=True)
 marco.config(bg="lightblue", width=650, height=350)
 
